@@ -11,6 +11,10 @@ type ProbeResult struct {
 	profilesDir string
 }
 
+func (pr *ProbeResult) GetRelDir(path string) string {
+	return filepath.Join(pr.appDataDir, path)
+}
+
 func (pr *ProbeResult) GetProfileDir(pid ProfileID) string {
 	return filepath.Join(pr.profilesDir, string(pid))
 }
