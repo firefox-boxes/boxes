@@ -18,3 +18,16 @@ func (I *Installation) ExecProfile(profileID ProfileID, pr ProbeResult) {
 	cmd.Wait()
 	delete(Exec, profileID)
 }
+
+func waitAndDeleteProcessIDLater(cmd *exec.Cmd, profileID ProfileID) {
+	cmd.Wait()
+	delete(Exec, profileID)
+}
+
+func (I *Installation) ExecProfileAndDetach(profileID ProfileID, pr ProbeResult) ProcessID {
+	cmd := exec.Command(I.Exec, "-profile", pr.GetProfileDir(profileID), "-no-remote")
+	cmd.Start()
+	Exec[profileID] = ProcessID(cmd.Process.Pid)
+	go waitAndDeleteProcessIDLater(cmd, profileID)
+	return Exec[profileID]
+}
