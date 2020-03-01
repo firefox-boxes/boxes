@@ -64,7 +64,7 @@ func GetInstallations() []Installation {
 	possibilities := GetPossibilities()
 	for i := 0; i < len(possibilities); i++ {
 		if exists(possibilities[i]) {
-			installations = append(installations, Installation{exec:possibilities[i]})
+			installations = append(installations, Installation{Exec:possibilities[i]})
 		}
 	}
 	return installations
