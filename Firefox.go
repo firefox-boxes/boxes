@@ -18,11 +18,11 @@ const TIMES_JSON = `{
 type ProfileID string
 
 type Installation struct {
-	exec string
+	Exec string
 }
 
 func (I Installation) IExists() bool {
-	return exists(I.exec)
+	return exists(I.Exec)
 }
 
 func genTimestamp() int64 {

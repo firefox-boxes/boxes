@@ -12,7 +12,7 @@ func (execPIDs *ExecPIDs) IsRunning(profileID ProfileID) (bool, ProcessID) {
 }
 
 func (I *Installation) ExecProfile(profileID ProfileID, pr ProbeResult) {
-	cmd := exec.Command(I.exec, "-profile", pr.GetProfileDir(profileID), "-no-remote")
+	cmd := exec.Command(I.Exec, "-profile", pr.GetProfileDir(profileID), "-no-remote")
 	cmd.Start()
 	Exec[profileID] = ProcessID(cmd.Process.Pid)
 	cmd.Wait()
