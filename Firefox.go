@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+const firefoxPathEnvName = "BOXES_FIREFOX_PATH"
+
 const TIMES_JSON = `{
 "created": {msTimestamp},
 "firstUse": null

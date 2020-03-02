@@ -1,5 +1,3 @@
-// +build linux darwin
-
 package boxes
 
 const DIR_MODE = uint32(0764)

@@ -1,4 +1,4 @@
-// +build darwin
+// +build linux
 
 package boxes
 
@@ -13,9 +13,7 @@ func GetPossibilities() []string {
 		paths := []string{}
 	}
 	return []string{
-		"/Applications/Firefox.app/Contents/MacOS/firefox",
-		"/Applications/Firefox Nightly.app/Contents/MacOS/firefox",
-		"/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox",
+		"/usr/bin/firefox",
 		paths...
 	}
 }
