@@ -15,7 +15,7 @@ func gen(n string) string {
 func GetPossibilities() []string {
 	paths := strings.Split(os.Getenv(firefoxPathEnvName), ";")
 	if paths[0] == "" {
-		paths := []string{}
+		paths = []string{}
 	}
 	return append([]string{
 		gen("Mozilla Firefox"),
