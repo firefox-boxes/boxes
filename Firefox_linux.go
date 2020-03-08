@@ -12,8 +12,7 @@ func GetPossibilities() []string {
 	if paths[0] == "" {
 		paths := []string{}
 	}
-	return []string{
-		"/usr/bin/firefox",
-		paths...
-	}
+	return append([]string{
+		"/usr/bin/firefox"
+	}, paths...)
 }

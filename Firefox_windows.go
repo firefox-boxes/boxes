@@ -17,10 +17,9 @@ func GetPossibilities() []string {
 	if paths[0] == "" {
 		paths := []string{}
 	}
-	return []string{
+	return append([]string{
 		gen("Mozilla Firefox"),
 		gen("Firefox Developer Edition"),
-		gen("Firefox Nightly"),
-		paths...
-	}
+		gen("Firefox Nightly")
+	}, paths...)
 }
