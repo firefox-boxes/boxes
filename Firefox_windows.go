@@ -4,8 +4,8 @@ package boxes
 
 import (
 	"os"
-	"strings"
 	"path"
+	"strings"
 )
 
 func gen(n string) string {
@@ -20,6 +20,6 @@ func GetPossibilities() []string {
 	return append([]string{
 		gen("Mozilla Firefox"),
 		gen("Firefox Developer Edition"),
-		gen("Firefox Nightly")
+		gen("Firefox Nightly"),
 	}, paths...)
 }

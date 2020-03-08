@@ -15,6 +15,6 @@ func GetPossibilities() []string {
 	return append([]string{
 		"/Applications/Firefox.app/Contents/MacOS/firefox",
 		"/Applications/Firefox Nightly.app/Contents/MacOS/firefox",
-		"/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox"
+		"/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox",
 	}, paths...)
 }

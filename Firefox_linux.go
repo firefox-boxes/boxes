@@ -13,6 +13,6 @@ func GetPossibilities() []string {
 		paths := []string{}
 	}
 	return append([]string{
-		"/usr/bin/firefox"
+		"/usr/bin/firefox",
 	}, paths...)
 }
