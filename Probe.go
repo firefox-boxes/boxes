@@ -7,16 +7,16 @@ import (
 )
 
 type ProbeResult struct {
-	appDataDir string
-	profilesDir string
+	AppDataDir string
+	ProfilesDir string
 }
 
 func (pr *ProbeResult) GetRelDir(path string) string {
-	return filepath.Join(pr.appDataDir, path)
+	return filepath.Join(pr.AppDataDir, path)
 }
 
 func (pr *ProbeResult) GetProfileDir(pid ProfileID) string {
-	return filepath.Join(pr.profilesDir, string(pid))
+	return filepath.Join(pr.ProfilesDir, string(pid))
 }
 
 func mkdirIfNotExists(path string, fileMode os.FileMode) (string, error) {
@@ -33,9 +33,9 @@ func Probe() ProbeResult {
 	if err != nil {
 		panic(err)
 	}
-	probeResult.appDataDir = filepath.Join(homeDir, ".FirefoxBoxes")
-	mkdirIfNotExists(probeResult.appDataDir, os.FileMode(DIR_MODE))
-	probeResult.profilesDir = filepath.Join(probeResult.appDataDir, "Boxes")
-	mkdirIfNotExists(probeResult.profilesDir, os.FileMode(DIR_MODE))
+	probeResult.AppDataDir = filepath.Join(homeDir, ".FirefoxBoxes")
+	mkdirIfNotExists(probeResult.AppDataDir, os.FileMode(DIR_MODE))
+	probeResult.ProfilesDir = filepath.Join(probeResult.AppDataDir, "Boxes")
+	mkdirIfNotExists(probeResult.ProfilesDir, os.FileMode(DIR_MODE))
 	return probeResult
 }
