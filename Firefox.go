@@ -36,6 +36,7 @@ func CreateProfile(path string) error {
 		return errors.New("profile already exists")
 	}
 	os.Mkdir(path, os.FileMode(DIR_MODE))
+	os.Mkdir(filepath.Join(path, "extensions"), os.FileMode(DIR_MODE))
 	content := strings.NewReplacer("{msTimestamp}", strconv.FormatInt(genTimestamp(), 10)).Replace(TIMES_JSON)
 	f, err := os.OpenFile(filepath.Join(path, "times.json"), os.O_WRONLY|os.O_CREATE, os.FileMode(LOCK_FILE_MODE))
 	if err != nil {
