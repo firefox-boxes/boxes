@@ -9,7 +9,7 @@ import (
 )
 
 func gen(n string) string {
-	return path.Join(os.GetEnv("SYSTEMDRIVE") + "\\Program Files", n, "firefox.exe")
+	return path.Join(os.Getenv("SYSTEMDRIVE") + "\\Program Files", n, "firefox.exe")
 }
 
 func GetPossibilities() []string {
